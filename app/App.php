@@ -14,4 +14,9 @@ class App extends Model
         'band' => 'required',
         'introduction' => 'required',
     );
+    // App Modelに関連付けを行なう
+    public function histories()
+    {
+      return $this->hasMany('App\History');
+    }
 }

@@ -31,6 +31,7 @@
           <table class="table table-dark">
             <thead>
               <tr>
+                <th width="10%">ID</th>
                 <th width="20%">バンド</th>
                 <th width="50%">紹介文</th>
               </tr>
@@ -38,8 +39,17 @@
             <tbody>
               @foreach ($posts as $key)
                 <tr>
-                  <td>{{ str_limit($app->band, 50) }}</td>
-                  <td>{{ str_limit($app->introduction, 500) }}</td>
+                  <td>{{ str_limit($key->id, 10) }}</td>
+                  <td>{{ str_limit($key->band, 50) }}</td>
+                  <td>{{ str_limit($key->introduction, 500) }}</td>
+                  <td>
+                    <div>
+                      <a href="{{ action('Admin\AppController@edit', ['id' => $key->id])}}">編集</a>
+                    </div>
+                    <div>
+                      <a href="{{ action('Admin\AppController@delete', ['id' => $key->id])}}">削除</a>
+                    </div>
+                  </td>
                 </tr>
               @endforeach
             </tbody>
