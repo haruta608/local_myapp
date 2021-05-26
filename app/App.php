@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class App extends Model
 {
     //
-    protected $table = 'app';
+    protected $table = 'band';
     protected $guarded = array('id');
 
     public static $rules = array(
-        'band' => 'required',
-        'introduction' => 'required',
+        'band_name' => 'required',
+        'description' => 'required',
     );
     // App Modelに関連付けを行なう
     public function histories()
     {
-      return $this->hasMany('App\History');
+      return $this->hasMany('App\History','user_id');
     }
 }

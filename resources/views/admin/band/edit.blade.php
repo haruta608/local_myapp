@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('band', 'バンドの編集')
+@section('band_name', 'バンドの編集')
 
 @section('content')
   <div class="container">
@@ -15,20 +15,20 @@
             </ul>
           @endif
           <div class="form-group row">
-            <label class="col-md-2" for="band">バンド名</label>
+            <label class="col-md-2" for="band_name">バンド名</label>
             <div class="col-md-10">
-              <input type="text" class="form-control" name="band" value="{{ $app_form->band }}">
+              <input type="text" class="form-control" name="band_name" value="{{ $band_form->band_name }}">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-2" for="introduction">紹介文</label>
+            <label class="col-md-2" for="description">紹介文</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="introduction" rows="20">{{ $app_form->introduction }}</textarea>
+              <textarea class="form-control" name="description" rows="20">{{ $band_form->description }}</textarea>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-md-10">
-              <input type="hidden" name="id" value="{{ $app_form->id }}">
+              <input type="hidden" name="id" value="{{ $band_form->id }}">
               {{ csrf_field() }}
               <input type="submit" class="btn btn-primary" value="更新">
             </div>
@@ -38,8 +38,8 @@
           <div class="col-md-4 mx-auto">
             <h2>編集履歴</h2>
             <ul class="list-group">
-              @if ($app_form->histories != NULL)
-                @foreach ($app_form->histories as $history)
+              @if ($band_form->histories != NULL)
+                @foreach ($band_form->histories as $history)
                   <li class="list-group-item">{{ $history->edited_at }}</li>
                 @endforeach
               @endif

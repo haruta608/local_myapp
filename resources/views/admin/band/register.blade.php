@@ -16,15 +16,15 @@
             </ul>
           @endif
           <div class="form-group row">
-            <label class="col-md-2" for="band">おすすめバンド</label>
+            <label class="col-md-2" for="band_name">おすすめバンド</label>
             <div class="col-md-10">
-              <input type="text" class="form-control" name="band" value="{{ old('band') }}">
+              <input type="text" class="form-control" name="band_name" value="{{ old('band_name') }}">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-2" for="introduction">紹介文</label>
+            <label class="col-md-2" for="description">紹介文</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
+              <textarea class="form-control" name="description" rows="10">{{ old('description') }}</textarea>
             </div>
           </div>
           {{ csrf_field() }}

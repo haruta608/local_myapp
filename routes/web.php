@@ -10,19 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GeneralController@index');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-  Route::get('app/register', 'Admin\AppController@add');
-  Route::post('app/register', 'Admin\AppController@register');
-  Route::get('app', 'Admin\AppController@index');
-  Route::get('app/edit', 'Admin\AppController@edit');
-  Route::post('app/edit', 'Admin\AppController@update');
-  Route::get('app/delete', 'Admin\AppController@delete');
+  Route::get('band/register', 'Admin\AppController@add');
+  Route::post('band/register', 'Admin\AppController@register');
+  Route::get('band', 'Admin\AppController@index');
+  Route::get('band/edit', 'Admin\AppController@edit');
+  Route::post('band/edit', 'Admin\AppController@update');
+  Route::get('band/delete', 'Admin\AppController@delete');
 });
+
+// いいねをつける
+Route::get('/home/like/{id}', 'HomeController@exeOther_outfitLike')->name('like_home');
+// いいねを消す
+Route::get('/home/nolike/{id}', 'HomeController@exeOther_outfitNoLike')->name('nolike_home');
 
 Auth::routes();
 

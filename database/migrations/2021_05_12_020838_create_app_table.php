@@ -13,10 +13,10 @@ class CreateAppTable extends Migration
      */
     public function up()
     {
-        Schema::create('app', function (Blueprint $table) {
+        Schema::create('band', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('band');
-            $table->string('introduction');
+            $table->string('band_name');
+            $table->string('description');
             $table->integer('user_id');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateAppTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('app');
+        Schema::dropIfExists('band');
     }
 }

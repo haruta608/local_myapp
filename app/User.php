@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function bands()
+    {
+      return $this->hasMany('App\App');
+    }
+    // Relationship
+    public function likes() {
+      return $this->hasMany(\App\Like::class, 'parent_id', 'id')->where('model', self::class);
+    }
 }

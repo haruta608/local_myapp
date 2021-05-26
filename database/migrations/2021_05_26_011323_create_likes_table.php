@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoriesTable extends Migration
+class CreateLikesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateStoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('histories', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('edited_at');
+            $table->integer('outfit_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateStoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('likes');
     }
 }

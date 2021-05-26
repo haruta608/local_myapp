@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('band', '登録済みのバンド一覧')
+@section('band_name', '登録済みのバンド一覧')
 
 @section('content')
   <div class="container">
@@ -13,9 +13,9 @@
       <div class="col-md-8">
         <form action="{{ action('Admin\AppController@index') }}" method="get">
           <div class="form-group row">
-            <label clss="col-md-2">バンド</label>
+            <label class="col-md-2">バンド</label>
             <div class="col-md-8">
-              <input type="text" class="form-control" name="cond_band" value="{{ $cond_band }}">
+              <input type="text" class="form-control" name="cond_band_name" value="{{ $cond_band_name }}">
             </div>
             <div class="col-md-2">
               {{ csrf_field() }}
@@ -40,8 +40,8 @@
               @foreach ($posts as $key)
                 <tr>
                   <td>{{ str_limit($key->id, 10) }}</td>
-                  <td>{{ str_limit($key->band, 50) }}</td>
-                  <td>{{ str_limit($key->introduction, 500) }}</td>
+                  <td>{{ str_limit($key->band_name, 50) }}</td>
+                  <td>{{ str_limit($key->description, 500) }}</td>
                   <td>
                     <div>
                       <a href="{{ action('Admin\AppController@edit', ['id' => $key->id])}}">編集</a>
