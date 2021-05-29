@@ -18,13 +18,12 @@ class GeneralController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('index', ['users' => $users]);
 
         $likes=array();
         $likes[0]='dummy';
-        foreach($outfit)
-        {
-          $like=Like::where('user_id', $id)->where('outfit_id', $outfit['id'])->first();
+        $outfits = App::all();
+        foreach ($outfits as $outfit) {
+          $like=Like::where('outfit_id', $outfit['id'])->first();
           if(!empty($like))
           {
             $like=1;
@@ -34,11 +33,12 @@ class GeneralController extends Controller
           array_push($likes,$like);
         }
 
-        foreach($outfit)
-        {
+        foreach ($outfits as $outfit) {
           $like_count=0;
           $like_count=Like::where('outfit_id',$outfit['id'])->count();
           $outfit['like']=$like_count;
         }
+        return view('index', ['users' => $users]);
+
     }
 }
