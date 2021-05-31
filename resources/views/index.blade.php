@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container">
-  <h1>オススメバンド一覧</h1>
+  <h1 class="font_test">オススメバンド一覧</h1>
   @if ($users != NULL)
     @foreach ($users as $user)
       <h4>{{ $user->name }}</h4>
