@@ -22,9 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 });
 
 // いいねをつける
-Route::get('/home/like/{id}', 'HomeController@exeOther_outfitLike')->name('like_home');
+Route::get('/home/like/{id}', 'Admin\LikeController@exeOther_outfitLike')->name('like_home');
 // いいねを消す
-Route::get('/home/nolike/{id}', 'HomeController@exeOther_outfitNoLike')->name('nolike_home');
+Route::get('/home/nolike/{id}', 'Admin\LikeController@exeOther_outfitNoLike')->name('nolike_home');
 
 Auth::routes();
 

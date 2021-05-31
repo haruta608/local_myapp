@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('band_name', 'オススメバンド一覧')
 
 @section('content')
 
@@ -10,22 +11,18 @@
         <ul class="list-group">
             @if ($user->bands != NULL)
                 @foreach ($user->bands as $band)
-                    <li class="list-group-item">{{ $band->band_name }}</li>
+                    <li class="list-group-item">
+                      {{ $band->band_name }}
+                      @if( Auth::check() )
+                        <button>いいね</button>
+                      @endif
+                      {{ count($band->likes) }}
+                    </li>
                 @endforeach
             @endif
         </ul>
     @endforeach
   @endif
 
-  @foreach($outfit)
-    <div class="d-inline float-right">
-    @if($likes[$loop->iteration]==1)
-    <a href="{{route('nolike_home', $outfit->id)}}"><i class="fas fa-heart fa-2x my-pink"></i></a>
-    @else
-    <a href="{{route('like_home', $outfit->id)}}"><i class="fas fa-heart fa-2x my-gray"></i></a>
-    @endif
-    </div>
-    <i class="fas fa-heart fa-2x my-pink float-right">{{$outfit->like}}</i>
-  @endforeach
 </div>
 @endsection

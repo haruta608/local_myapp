@@ -38,7 +38,7 @@ class GeneralController extends Controller
           $like_count=Like::where('outfit_id',$outfit['id'])->count();
           $outfit['like']=$like_count;
         }
-        return view('index', ['users' => $users]);
+        return view('index', ['users' => $users, 'outfits' => $outfits, 'likes' => $likes]);
 
     }
 }

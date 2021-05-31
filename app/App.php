@@ -19,4 +19,8 @@ class App extends Model
     {
       return $this->hasMany('App\History','user_id');
     }
+    public function likes()
+    {
+      return $this->hasMany('App\Like','outfit_id');
+    }
 }
