@@ -13,6 +13,7 @@
                 @foreach ($user->bands as $band)
                     <li class="list-group-item">
                       {{ $band->band_name }}
+                      {{ $band->description }}
                       @if( Auth::check() )
                         <button>いいね</button>
                       @endif

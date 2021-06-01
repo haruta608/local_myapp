@@ -5,6 +5,16 @@ body {
   color: #fff;
 }
 
+.font_test {
+  color: #4169e1;
+  font-style: italic;
+  text-align: center;
+}
+
+.container {
+  background-color: #c0c0c0;
+}
+
 .navbar-laravel {
   background-color: #696969;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
