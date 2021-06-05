@@ -18,6 +18,7 @@ class CreateAppTable extends Migration
             $table->string('band_name');
             $table->string('description');
             $table->integer('user_id');
+            $table->string('recommend_music');
             $table->timestamps();
         });
     }

@@ -27,6 +27,12 @@
               <textarea class="form-control" name="description" rows="10">{{ old('description') }}</textarea>
             </div>
           </div>
+          <div class="form-group row">
+            <label class="col-md-2" for="recommend_music">おすすめ曲</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="recommend_music" value="{{ old('recommend_music') }}">
+            </div>
+          </div>
           {{ csrf_field() }}
           <input type="submit" class="btn btn-primary" value="更新">
         </form>

@@ -23,7 +23,13 @@
           <div class="form-group row">
             <label class="col-md-2" for="description">紹介文</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="description" rows="20">{{ $band_form->description }}</textarea>
+              <textarea class="form-control" name="description" rows="10">{{ $band_form->description }}</textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2" for="recommend_music">おすすめ曲</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" name="recommend_music" value="{{ $band_form->recommend_music }}">
             </div>
           </div>
           <div class="form-group row">

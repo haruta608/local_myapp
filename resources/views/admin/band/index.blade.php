@@ -4,7 +4,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <h2>バンド一覧</h2>
+      <h2 class=font_list>バンド一覧</h2>
     </div>
     <div class="row">
       <div class="col-md-4">
@@ -31,9 +31,10 @@
           <table class="table table-dark">
             <thead>
               <tr>
-                <th width="10%">ID</th>
-                <th width="20%">バンド</th>
-                <th width="50%">紹介文</th>
+                <th width="8%">ID</th>
+                <th width="15%">バンド</th>
+                <th width="45%">紹介文</th>
+                <th width="25%">おすすめ曲</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@
                   <td>{{ str_limit($key->id, 10) }}</td>
                   <td>{{ str_limit($key->band_name, 50) }}</td>
                   <td>{{ str_limit($key->description, 500) }}</td>
+                  <td>{{ str_limit($key->recommend_music, 50) }}</td>
                   <td>
                     <div>
                       <a href="{{ action('Admin\AppController@edit', ['id' => $key->id])}}">編集</a>

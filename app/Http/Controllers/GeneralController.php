@@ -19,26 +19,7 @@ class GeneralController extends Controller
     {
         $users = User::all();
 
-        $likes=array();
-        $likes[0]='dummy';
-        $outfits = App::all();
-        foreach ($outfits as $outfit) {
-          $like=Like::where('outfit_id', $outfit['id'])->first();
-          if(!empty($like))
-          {
-            $like=1;
-          }else {
-            $like=0;
-          }
-          array_push($likes,$like);
-        }
-
-        foreach ($outfits as $outfit) {
-          $like_count=0;
-          $like_count=Like::where('outfit_id',$outfit['id'])->count();
-          $outfit['like']=$like_count;
-        }
-        return view('index', ['users' => $users, 'outfits' => $outfits, 'likes' => $likes]);
+        return view('index', ['users' => $users]);
 
     }
 }

@@ -12,3 +12,62 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+.font_test {
+  color: #e0ffff;
+  font-weight: 700;
+  font-family: arial black;
+  text-align: center;
+}
+
+body {
+  width: 100%;
+  background-image:
+  linear-gradient(140deg,
+      #00f3ffA0,
+      #0028b960 40%,
+      #00f3ff60 90%,
+      #00f3ffA0),
+  url("https://cdn.pixabay.com/photo/2016/11/22/18/56/audience-1850022_1280.jpg")
+}
+#name_id {
+  font-weight: bold;
+}
+.container h4{
+  color: #fff;
+}
+
+.like_button {
+  float: right;
+}
+
+.flex_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.like_form {
+    display: inline-block;
+}
+.band_info .band_name {
+    font-weight: bold;
+    font-size: 22px;
+}
+.band_info .band_description {
+    margin: 5px 0 0;
+    color: #666;
+    white-space: pre-wrap;
+}
+.band_info .band_recommend {
+  font-weight: bold;
+  color: #666;
+}
+.img_wrap img{
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.img_wrap:hover img{
+  opacity: 0.6;
+  transition-duration: 0.3s;
+}
