@@ -11,6 +11,8 @@
 |
 */
 Route::get('/', 'GeneralController@index');
+Route::get('', 'GeneralController@serch');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('band/register', 'Admin\AppController@add');
