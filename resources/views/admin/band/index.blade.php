@@ -15,7 +15,7 @@
           <div class="form-group row">
             <label class="col-md-2">バンド</label>
             <div class="col-md-8">
-              <input type="text" class="form-control" name="cond_band_name" value="{{ $cond_band_name }}">
+              <input type="text" class="form-control" name="band_name" value="{{ $band_name }}">
             </div>
             <div class="col-md-2">
               {{ csrf_field() }}

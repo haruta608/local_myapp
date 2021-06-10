@@ -38,15 +38,15 @@ class AppController extends Controller
 
     public function index(Request $request)
     {
-      $cond_band_name = $request->cond_band_name;
-      if ($cond_band_name != '') {
+      $band_name = $request->band_name;
+      if ($band_name != '') {
         // 検索されたら検索結果を取得する
-        $posts = App::where('band', $cond_band_name)->get();
+        $posts = App::where('band', $band_name)->get();
       }else {
         // それ以外は全てを表示する
         $posts = App::where('user_id', Auth::id())->get();
       }
-      return view('admin.band.index', ['posts' => $posts, 'cond_band_name' => $cond_band_name]);
+      return view('admin.band.index', ['posts' => $posts, 'band_name' => $band_name]);
     }
 
     public function edit(Request $request)
