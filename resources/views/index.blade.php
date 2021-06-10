@@ -4,10 +4,10 @@
 <div class="container">
   <h1 class="font_test">Recommnd Bands</h1>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 serch_box">
         <form action="{{ action('GeneralController@serch') }}" method="get">
             <div class="form-group row">
-                <label class="col-md-2">バンド名</label>
+                <label class="band_name">バンド名</label>
                 <div class="col-md-8">
                   <input type="text" class="form-control" name="serch_name" value="{{ $serch_name }}">
                 </div>
@@ -19,7 +19,6 @@
           </form>
     </div>
   </div>
-  <div class="row">
     @if ($users != NULL)
       @foreach ($users as $user)
         <h4>{{ $user->name }}</h4>
@@ -59,6 +58,5 @@
           </ul>
       @endforeach
     @endif
-  </div>
 </div>
 @endsection

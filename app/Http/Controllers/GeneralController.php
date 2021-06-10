@@ -24,12 +24,13 @@ class GeneralController extends Controller
 
     public function serch(Request $request)
     {
+      $users = User::all();
       $serch_name = $request->serch_name;
       if ($serch_name != '') {
         $posts = App::where('band_name', $serch_name)->get();
       } else {
         $posts = App::all();
       }
-      return view('index', ['posts' => $posts, 'serch_name' => $serch_name]);
+      return view('index', ['users' => $users, 'posts' => $posts, 'serch_name' => $serch_name]);
     }
 }
