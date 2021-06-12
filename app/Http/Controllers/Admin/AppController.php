@@ -41,7 +41,7 @@ class AppController extends Controller
       $band_name = $request->band_name;
       if ($band_name != '') {
         // 検索されたら検索結果を取得する
-        $posts = App::where('band', $band_name)->get();
+        $posts = App::where('band_name', $band_name)->get();
       }else {
         // それ以外は全てを表示する
         $posts = App::where('user_id', Auth::id())->get();

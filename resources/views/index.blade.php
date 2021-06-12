@@ -5,15 +5,15 @@
   <h1 class="font_test">Recommnd Bands</h1>
   <div class="row">
     <div class="col-md-8 serch_box">
-        <form action="{{ action('GeneralController@serch') }}" method="get">
+        <form action="{{ action('GeneralController@search') }}" method="get">
             <div class="form-group row">
                 <label class="band_name">バンド名</label>
                 <div class="col-md-8">
-                  <input type="text" class="form-control" name="serch_name" value="{{ $serch_name }}">
+                  <input type="text" class="form-control" name="band_name" value="{{ $band_name }}">
                 </div>
                 <div class="col-md-2">
-                    {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="検索">
+                  {{ csrf_field() }}
+                  <input type="submit" class="btn btn-primary" value="検索">
                 </div>
              </div>
           </form>

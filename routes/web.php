@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', 'GeneralController@index');
-Route::get('', 'GeneralController@serch');
+Route::get('', 'GeneralController@search');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
